@@ -24,80 +24,79 @@ st.set_page_config(
 # --------------------------------------------------
 # 2. CLEAN ACADEMIC CSS
 # --------------------------------------------------
-st.markdown("""
 <style>
-/* Base App */
-.stApp {
-    background: linear-gradient(135deg, #f8fafc, #eef2ff);
-    color: #0f172a;
-    font-family: 'Inter', sans-serif;
-}
+    /* App Background */
+    .stApp {
+        background-color: #f8fafc;
+        color: #0f172a;
+        font-family: "Inter", sans-serif;
+    }
 
-/* Header */
-.header-card {
-    background: #ffffff;
-    padding: 2.2rem;
-    border-radius: 16px;
-    border-left: 6px solid #4f46e5;
-    margin-bottom: 1.8rem;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-}
+    /* Header */
+    .main-header {
+        background-color: #ffffff;
+        padding: 28px;
+        border-radius: 14px;
+        margin-bottom: 24px;
+        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+        text-align: center;
+        border-left: 6px solid #4f46e5;
+    }
 
-/* Section Cards */
-.metric-card,
-.predict-card {
-    background: #ffffff;
-    padding: 1.8rem;
-    border-radius: 14px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-    border: 1px solid #e5e7eb;
-}
+    .main-header h1 {
+        color: #1e293b;
+        font-weight: 700;
+    }
 
-/* Prediction Highlight */
-.predict-card {
-    border-left: 6px solid #22c55e;
-}
+    /* Prediction Card */
+    .prediction-card {
+        background-color: #ffffff;
+        border-left: 6px solid #4f46e5;
+        border-radius: 12px;
+        padding: 22px;
+        margin: 16px 0;
+        box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+    }
 
-/* Buttons */
-.stButton button {
-    background: linear-gradient(135deg, #4f46e5, #6366f1) !important;
-    color: white !important;
-    font-weight: 600;
-    padding: 0.6rem 1.8rem;
-    border-radius: 10px;
-    border: none;
-}
+    /* Score Display */
+    .score-display {
+        font-size: 2.6rem;
+        font-weight: 800;
+        color: #1e293b;
+    }
 
-/* Tabs */
-[data-baseweb="tab"] {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #334155;
-}
+    /* Buttons */
+    .stButton > button {
+        background-color: #4f46e5 !important;
+        color: #ffffff !important;
+        padding: 12px 28px !important;
+        border-radius: 8px !important;
+        font-weight: 600 !important;
+        border: none !important;
+        transition: all 0.2s ease-in-out;
+    }
 
-[data-baseweb="tab"][aria-selected="true"] {
-    color: #4f46e5;
-}
+    .stButton > button:hover {
+        background-color: #4338ca !important;
+        transform: translateY(-1px);
+    }
 
-/* Inputs */
-input, select, textarea {
-    border-radius: 8px !important;
-}
+    /* Inputs */
+    input, textarea, select {
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+        border-radius: 6px !important;
+        border: 1px solid #cbd5f5 !important;
+    }
 
-/* Tables */
-.stDataFrame {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-/* Plotly */
-.plotly-chart {
-    background: white !important;
-    border-radius: 14px;
-}
+    /* Divider */
+    hr {
+        border: none;
+        height: 1px;
+        background-color: #e5e7eb;
+        margin: 24px 0;
+    }
 </style>
-""", unsafe_allow_html=True)
 
 # --------------------------------------------------
 # 3. DATA LOADING
@@ -280,4 +279,5 @@ with tab4:
     **Features**: Academic habits, AI usage, lifestyle  
     **Purpose**: Educational analytics & performance prediction  
     """)
+
 
