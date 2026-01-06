@@ -24,6 +24,7 @@ st.set_page_config(
 # --------------------------------------------------
 # 2. CLEAN ACADEMIC CSS
 # --------------------------------------------------
+st.markdown("""
 <style>
     /* App Background */
     .stApp {
@@ -97,6 +98,7 @@ st.set_page_config(
         margin: 24px 0;
     }
 </style>
+""", unsafe_allow_html=True)
 
 # --------------------------------------------------
 # 3. DATA LOADING
@@ -279,5 +281,6 @@ with tab4:
     **Features**: Academic habits, AI usage, lifestyle  
     **Purpose**: Educational analytics & performance prediction  
     """)
+
 
 
