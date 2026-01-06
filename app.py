@@ -26,47 +26,77 @@ st.set_page_config(
 # --------------------------------------------------
 st.markdown("""
 <style>
-body {
-    background-color: #0b1220;
-}
+/* Base App */
 .stApp {
-    background: linear-gradient(120deg, #0b1220, #111827);
-    color: #e5e7eb;
+    background: linear-gradient(135deg, #f8fafc, #eef2ff);
+    color: #0f172a;
+    font-family: 'Inter', sans-serif;
 }
+
+/* Header */
 .header-card {
-    background: #111827;
-    padding: 2rem;
-    border-radius: 14px;
-    border-left: 6px solid #4f46e5;
-    margin-bottom: 1.5rem;
-}
-.metric-card {
-    background: #0f172a;
-    padding: 1.5rem;
-    border-radius: 12px;
-    border: 1px solid #1f2937;
-}
-.predict-card {
-    background: #020617;
-    padding: 2rem;
+    background: #ffffff;
+    padding: 2.2rem;
     border-radius: 16px;
+    border-left: 6px solid #4f46e5;
+    margin-bottom: 1.8rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+/* Section Cards */
+.metric-card,
+.predict-card {
+    background: #ffffff;
+    padding: 1.8rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    border: 1px solid #e5e7eb;
+}
+
+/* Prediction Highlight */
+.predict-card {
     border-left: 6px solid #22c55e;
 }
+
+/* Buttons */
 .stButton button {
-    background: #4f46e5 !important;
+    background: linear-gradient(135deg, #4f46e5, #6366f1) !important;
     color: white !important;
     font-weight: 600;
     padding: 0.6rem 1.8rem;
     border-radius: 10px;
+    border: none;
+}
+
+/* Tabs */
+[data-baseweb="tab"] {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+[data-baseweb="tab"][aria-selected="true"] {
+    color: #4f46e5;
+}
+
+/* Inputs */
+input, select, textarea {
+    border-radius: 8px !important;
+}
+
+/* Tables */
+.stDataFrame {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Plotly */
+.plotly-chart {
+    background: white !important;
+    border-radius: 14px;
 }
 </style>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-<div class="header-card">
-<h1>🎓 AI Student Performance Predictor</h1>
-<p>Machine Learning–based prediction of final academic scores using AI usage and study behavior</p>
-</div>
 """, unsafe_allow_html=True)
 
 # --------------------------------------------------
@@ -250,3 +280,4 @@ with tab4:
     **Features**: Academic habits, AI usage, lifestyle  
     **Purpose**: Educational analytics & performance prediction  
     """)
+
