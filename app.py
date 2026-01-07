@@ -23,82 +23,106 @@ st.set_page_config(
 
 # 2. Custom CSS
 custom_css = """
-
 <style>
-    /* App Background */
-    .stApp {
-        background-color: #f8fafc;
-        color: #0f172a;
-        font-family: "Inter", sans-serif;
-    }
+/* App Background */
+.stApp {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: "Inter", sans-serif;
+}
 
-    /* Header */
-    .main-header {
-        background-color: #ffffff;
-        padding: 28px;
-        border-radius: 14px;
-        margin-bottom: 24px;
-        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
-        text-align: center;
-        border-left: 6px solid #4f46e5;
-    }
+/* Header */
+.main-header {
+    background-color: #ffffff;
+    padding: 28px;
+    border-radius: 14px;
+    margin-bottom: 24px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+    text-align: center;
+    border-left: 6px solid #4f46e5;
+}
 
-    .main-header h1 {
-        color: #1e293b;
-        font-weight: 700;
-    }
+.main-header h1,
+.main-header p {
+    color: #000000;
+}
 
-    /* Prediction Card */
-    .prediction-card {
-        background-color: #ffffff;
-        border-left: 6px solid #4f46e5;
-        border-radius: 12px;
-        padding: 22px;
-        margin: 16px 0;
-        box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
-    }
+/* Force ALL labels to black */
+label,
+.stSelectbox label,
+.stNumberInput label,
+.stSlider label,
+.stRadio label,
+.stCheckbox label,
+.stTextInput label {
+    color: #000000 !important;
+    font-weight: 600;
+}
 
-    /* Score Display */
-    .score-display {
-        font-size: 2.6rem;
-        font-weight: 800;
-        color: #1e293b;
-    }
+/* Input text (inside fields) */
+input, textarea, select {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-radius: 6px !important;
+    border: 1px solid #cbd5f5 !important;
+}
 
-    /* Buttons */
-    .stButton > button {
-        background-color: #4f46e5 !important;
-        color: #ffffff !important;
-        padding: 12px 28px !important;
-        border-radius: 8px !important;
-        font-weight: 600 !important;
-        border: none !important;
-        transition: all 0.2s ease-in-out;
-    }
+/* Dropdown selected value */
+.stSelectbox div[data-baseweb="select"] > div {
+    color: #000000 !important;
+}
 
-    .stButton > button:hover {
-        background-color: #4338ca !important;
-        transform: translateY(-1px);
-    }
+/* Slider values */
+.stSlider span {
+    color: #000000 !important;
+}
 
-    /* Inputs */
-    input, textarea, select {
-        background-color: #ffffff !important;
-        color: #0f172a !important;
-        border-radius: 6px !important;
-        border: 1px solid #cbd5f5 !important;
-    }
+/* Metric labels & values */
+[data-testid="stMetricLabel"],
+[data-testid="stMetricValue"] {
+    color: #000000 !important;
+}
 
-    /* Divider */
-    hr {
-        border: none;
-        height: 1px;
-        background-color: #e5e7eb;
-        margin: 24px 0;
-    }
+/* Prediction Card */
+.prediction-card {
+    background-color: #ffffff;
+    border-left: 6px solid #4f46e5;
+    border-radius: 12px;
+    padding: 22px;
+    margin: 16px 0;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+}
+
+.score-display {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #000000;
+}
+
+/* Buttons */
+.stButton > button {
+    background-color: #4f46e5 !important;
+    color: #ffffff !important;
+    padding: 12px 28px !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    border: none !important;
+}
+
+.stButton > button:hover {
+    background-color: #4338ca !important;
+}
+
+/* Divider */
+hr {
+    border: none;
+    height: 1px;
+    background-color: #e5e7eb;
+    margin: 24px 0;
+}
 </style>
-
 """
+
 st.markdown(custom_css, unsafe_allow_html=True)
 
 st.markdown('<div class="main-header"><h1>🎓 AI Student Score Predictor</h1><p>Predicting exact final scores based on study habits and AI usage</p></div>', unsafe_allow_html=True)
@@ -399,3 +423,4 @@ with tab4:
     - **MAE**: Average absolute error in points
     - **RMSE**: Root mean squared error (penalizes larger errors)
     """)
+
